@@ -90,26 +90,44 @@ function getRepoRelativePath(repo: Repository, fileUri: vscode.Uri): string {
 }
 
 /**
- * Gathers all git context required to build a remote link for the currently
- * active text editor file.
+ * Resolves the URI to operate on. When a command is invoked from the file
+ * explorer context menu, VS Code passes the clicked file's URI as the first
+ * argument. When invoked from the command palette we fall back to the active
+ * editor's document URI.
  *
- * Throws a descriptive error if any prerequisite is missing (no open editor,
- * no git repo, no remotes, detached HEAD with no commit, etc.).
+ * Throws if neither source yields a usable URI.
  */
-export async function getGitContext(): Promise<GitContext> {
+function resolveFileUri(explorerUri: vscode.Uri | undefined): vscode.Uri {
+    if (explorerUri) {
+        return explorerUri;
+    }
+
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
         throw new Error("No active editor. Open a file and try again.");
     }
-
-    const { document } = editor;
-    if (document.isUntitled) {
+    if (editor.document.isUntitled) {
         throw new Error("The file has not been saved yet — it has no path.");
     }
+    return editor.document.uri;
+}
+
+/**
+ * Gathers all git context required to build a remote link for a file.
+ *
+ * @param explorerUri - URI passed by VS Code when the command is triggered
+ *   from the file explorer context menu. Pass `undefined` when invoking from
+ *   the command palette (falls back to the active editor).
+ *
+ * Throws a descriptive error if any prerequisite is missing (no open editor,
+ * no git repo, no remotes, detached HEAD with no commit, etc.).
+ */
+export async function getGitContext(explorerUri?: vscode.Uri): Promise<GitContext> {
+    const fileUri = resolveFileUri(explorerUri);
 
     const api = getGitApi();
 
-    const repo = api.getRepository(document.uri);
+    const repo = api.getRepository(fileUri);
     if (!repo) {
         throw new Error(
             "The current file does not belong to a git repository."
@@ -125,7 +143,7 @@ export async function getGitContext(): Promise<GitContext> {
     }
 
     const remote = resolveRemote(repo);
-    const filePath = getRepoRelativePath(repo, document.uri);
+    const filePath = getRepoRelativePath(repo, fileUri);
 
     return { repo, headCommitSha, remote, filePath };
 }

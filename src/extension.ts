@@ -13,11 +13,11 @@ import {
  * error notification rather than silently swallowed by the extension host.
  */
 function withErrorHandler(
-    fn: () => Promise<void>
-): () => Promise<void> {
-    return async () => {
+    fn: (uri?: vscode.Uri) => Promise<void>
+): (uri?: vscode.Uri) => Promise<void> {
+    return async (uri?: vscode.Uri) => {
         try {
-            await fn();
+            await fn(uri);
         } catch (err) {
             const message =
                 err instanceof Error ? err.message : String(err);

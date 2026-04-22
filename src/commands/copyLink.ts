@@ -28,8 +28,8 @@ async function copyUrlToClipboard(url: string): Promise<void> {
  * Builds a GitHub URL pinned to the HEAD commit SHA and copies it to the
  * clipboard.
  */
-export async function copyLinkToRemoteHead(): Promise<void> {
-    const ctx = await getGitContext();
+export async function copyLinkToRemoteHead(explorerUri?: vscode.Uri): Promise<void> {
+    const ctx = await getGitContext(explorerUri);
     const selection = getSelectionLines();
     const url = resolveGitHubUrl(ctx.remote, {
         ref: ctx.headCommitSha,
@@ -43,8 +43,8 @@ export async function copyLinkToRemoteHead(): Promise<void> {
  * Prompts the user to pick a remote branch, then copies a GitHub URL for the
  * file at that ref to the clipboard.
  */
-export async function copyLinkToRemoteBranch(): Promise<void> {
-    const ctx = await getGitContext();
+export async function copyLinkToRemoteBranch(explorerUri?: vscode.Uri): Promise<void> {
+    const ctx = await getGitContext(explorerUri);
 
     const branches = await getRemoteBranches(ctx.repo);
     if (branches.length === 0) {

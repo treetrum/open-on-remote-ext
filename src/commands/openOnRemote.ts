@@ -21,8 +21,8 @@ function getSelectionLines(): { startLine: number; endLine: number } | undefined
  * Builds a GitHub URL pinned to the HEAD commit SHA and opens it in the
  * default browser.
  */
-export async function openFileOnRemoteHead(): Promise<void> {
-    const ctx = await getGitContext();
+export async function openFileOnRemoteHead(explorerUri?: vscode.Uri): Promise<void> {
+    const ctx = await getGitContext(explorerUri);
     const selection = getSelectionLines();
     const url = resolveGitHubUrl(ctx.remote, {
         ref: ctx.headCommitSha,
@@ -36,8 +36,8 @@ export async function openFileOnRemoteHead(): Promise<void> {
  * Prompts the user to pick a remote branch, then opens the file at that ref
  * in the default browser.
  */
-export async function openFileOnRemoteBranch(): Promise<void> {
-    const ctx = await getGitContext();
+export async function openFileOnRemoteBranch(explorerUri?: vscode.Uri): Promise<void> {
+    const ctx = await getGitContext(explorerUri);
 
     const branches = await getRemoteBranches(ctx.repo);
     if (branches.length === 0) {

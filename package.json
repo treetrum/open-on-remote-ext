@@ -65,25 +65,25 @@
           "when": "editorIsOpen"
         }
       ],
-      "editor/context": [
+      "explorer/context": [
         {
           "command": "openOnRemote.openFileHead",
-          "when": "editorIsOpen",
+          "when": "!explorerResourceIsFolder",
           "group": "navigation@100"
         },
         {
           "command": "openOnRemote.openFileBranch",
-          "when": "editorIsOpen",
+          "when": "!explorerResourceIsFolder",
           "group": "navigation@101"
         },
         {
           "command": "openOnRemote.copyLinkHead",
-          "when": "editorIsOpen",
+          "when": "!explorerResourceIsFolder",
           "group": "navigation@102"
         },
         {
           "command": "openOnRemote.copyLinkBranch",
-          "when": "editorIsOpen",
+          "when": "!explorerResourceIsFolder",
           "group": "navigation@103"
         }
       ]
