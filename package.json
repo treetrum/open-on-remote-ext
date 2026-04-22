@@ -1,0 +1,85 @@
+{
+  "name": "open-on-remote",
+  "displayName": "Open on Remote",
+  "description": "Open the current file or selection on GitHub. Lightweight replacement for the GitHub Pull Requests extension's 'open on remote' feature.",
+  "version": "0.1.0",
+  "publisher": "treetrum",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/treetrum/open-on-remote-ext.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "github",
+    "remote",
+    "open",
+    "permalink"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "openOnRemote.openFileHead",
+        "title": "Open File on Remote (HEAD)",
+        "category": "Open on Remote"
+      },
+      {
+        "command": "openOnRemote.openFileBranch",
+        "title": "Open File on Remote (Choose Branch)",
+        "category": "Open on Remote"
+      },
+      {
+        "command": "openOnRemote.copyLinkHead",
+        "title": "Copy Link to Remote (HEAD)",
+        "category": "Open on Remote"
+      },
+      {
+        "command": "openOnRemote.copyLinkBranch",
+        "title": "Copy Link to Remote (Choose Branch)",
+        "category": "Open on Remote"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "openOnRemote.openFileHead",
+          "when": "editorIsOpen"
+        },
+        {
+          "command": "openOnRemote.openFileBranch",
+          "when": "editorIsOpen"
+        },
+        {
+          "command": "openOnRemote.copyLinkHead",
+          "when": "editorIsOpen"
+        },
+        {
+          "command": "openOnRemote.copyLinkBranch",
+          "when": "editorIsOpen"
+        }
+      ]
+    }
+  },
+  "extensionDependencies": [
+    "vscode.git"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "oxlint src/"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "oxlint": "^1.61.0",
+    "typescript": "^5.4.0"
+  }
+}
