@@ -27,7 +27,7 @@
     "commands": [
       {
         "command": "openOnRemote.openFileHead",
-        "title": "Open File on Remote (HEAD)",
+        "title": "Open File on Remote",
         "category": "Open on Remote"
       },
       {
@@ -37,7 +37,7 @@
       },
       {
         "command": "openOnRemote.copyLinkHead",
-        "title": "Copy Link to Remote (HEAD)",
+        "title": "Copy Link to Remote",
         "category": "Open on Remote"
       },
       {
@@ -63,6 +63,28 @@
         {
           "command": "openOnRemote.copyLinkBranch",
           "when": "editorIsOpen"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "openOnRemote.openFileHead",
+          "when": "editorIsOpen",
+          "group": "navigation@100"
+        },
+        {
+          "command": "openOnRemote.openFileBranch",
+          "when": "editorIsOpen",
+          "group": "navigation@101"
+        },
+        {
+          "command": "openOnRemote.copyLinkHead",
+          "when": "editorIsOpen",
+          "group": "navigation@102"
+        },
+        {
+          "command": "openOnRemote.copyLinkBranch",
+          "when": "editorIsOpen",
+          "group": "navigation@103"
         }
       ]
     }
