@@ -17,6 +17,11 @@ function getSelectionLines(
     if (!editor || editor.document.uri.fsPath !== fileUri.fsPath) {
         return undefined;
     }
+    // Only include line anchors when the user has an active text selection.
+    // A cursor with no selection (isEmpty) should open the file without an anchor.
+    if (editor.selection.isEmpty) {
+        return undefined;
+    }
     const startLine = editor.selection.start.line + 1;
     const endLine = editor.selection.end.line + 1;
     return { startLine, endLine };
