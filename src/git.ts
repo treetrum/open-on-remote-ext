@@ -153,10 +153,8 @@ export async function getGitContext(explorerUri?: vscode.Uri): Promise<GitContex
 /**
  * Returns all remote-tracking branch names for a repository, stripped of
  * their remote prefix, e.g. ["main", "develop", "feature/foo"].
- *
- * Used to populate the branch picker for "Choose Branch" commands.
  */
-export async function getRemoteBranches(repo: Repository): Promise<string[]> {
+async function getRemoteBranches(repo: Repository): Promise<string[]> {
     const refs = await repo.getBranches({ remote: true });
     return refs
         .map((ref) => ref.name)
@@ -169,4 +167,43 @@ export async function getRemoteBranches(repo: Repository): Promise<string[]> {
         })
         .filter((name) => name !== "HEAD")
         .sort();
+}
+
+/**
+ * A quick-pick item representing a git ref (commit SHA or branch name).
+ */
+export interface RefPickItem extends vscode.QuickPickItem {
+    /** The git ref to use in the URL — either a commit SHA or a branch name. */
+    ref: string;
+}
+
+/**
+ * Shows a quick-pick populated with:
+ *   1. The HEAD commit SHA as the first/default item (labelled "Current commit (HEAD)")
+ *   2. All remote-tracking branches sorted alphabetically
+ *
+ * Returns the chosen item, or undefined if the user dismissed the picker.
+ */
+export async function pickRef(
+    ctx: GitContext,
+    title: string
+): Promise<RefPickItem | undefined> {
+    const branches = await getRemoteBranches(ctx.repo);
+
+    const items: RefPickItem[] = [
+        {
+            label: "$(git-commit) Current commit (HEAD)",
+            description: ctx.headCommitSha.slice(0, 7),
+            ref: ctx.headCommitSha,
+        },
+        ...branches.map((branch) => ({
+            label: `$(git-branch) ${branch}`,
+            ref: branch,
+        })),
+    ];
+
+    return vscode.window.showQuickPick(items, {
+        title,
+        placeHolder: "Select a ref — press Enter to use HEAD commit",
+    });
 }

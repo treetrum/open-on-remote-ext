@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { getGitContext, getRemoteBranches } from "../git";
+import { getGitContext, pickRef } from "../git";
 import { resolveGitHubUrl } from "../remote";
 
 /**
@@ -29,48 +29,20 @@ function getSelectionLines(
 }
 
 /**
- * Builds a GitHub URL pinned to the HEAD commit SHA and opens it in the
- * default browser.
+ * Prompts the user to pick a ref (defaulting to HEAD commit SHA), then opens
+ * the file at that ref in the default browser.
  */
-export async function openFileOnRemoteHead(explorerUri?: vscode.Uri): Promise<void> {
-    const ctx = await getGitContext(explorerUri);
-    const selection = getSelectionLines(ctx.fileUri);
-    const url = resolveGitHubUrl(ctx.remote, {
-        ref: ctx.headCommitSha,
-        filePath: ctx.filePath,
-        ...selection,
-    });
-    await vscode.env.openExternal(vscode.Uri.parse(url));
-}
-
-/**
- * Prompts the user to pick a remote branch, then opens the file at that ref
- * in the default browser.
- */
-export async function openFileOnRemoteBranch(explorerUri?: vscode.Uri): Promise<void> {
+export async function openFileOnRemote(explorerUri?: vscode.Uri): Promise<void> {
     const ctx = await getGitContext(explorerUri);
 
-    const branches = await getRemoteBranches(ctx.repo);
-    if (branches.length === 0) {
-        throw new Error(
-            "No remote-tracking branches found. " +
-                "Run `git fetch` to update remote refs and try again."
-        );
-    }
-
-    const picked = await vscode.window.showQuickPick(branches, {
-        title: "Open on Remote — Choose Branch",
-        placeHolder: "Select a branch…",
-    });
-
-    // User dismissed the picker.
+    const picked = await pickRef(ctx, "Open File on Remote");
     if (picked === undefined) {
         return;
     }
 
     const selection = getSelectionLines(ctx.fileUri);
     const url = resolveGitHubUrl(ctx.remote, {
-        ref: picked,
+        ref: picked.ref,
         filePath: ctx.filePath,
         ...selection,
     });

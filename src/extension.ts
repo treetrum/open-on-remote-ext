@@ -1,12 +1,6 @@
 import * as vscode from "vscode";
-import {
-    openFileOnRemoteHead,
-    openFileOnRemoteBranch,
-} from "./commands/openOnRemote";
-import {
-    copyLinkToRemoteHead,
-    copyLinkToRemoteBranch,
-} from "./commands/copyLink";
+import { openFileOnRemote } from "./commands/openOnRemote";
+import { copyLinkToRemote } from "./commands/copyLink";
 
 /**
  * Wraps a command handler so that any thrown error is surfaced as a VS Code
@@ -29,20 +23,12 @@ function withErrorHandler(
 export function activate(context: vscode.ExtensionContext): void {
     context.subscriptions.push(
         vscode.commands.registerCommand(
-            "openOnRemote.openFileHead",
-            withErrorHandler(openFileOnRemoteHead)
+            "openOnRemote.openFile",
+            withErrorHandler(openFileOnRemote)
         ),
         vscode.commands.registerCommand(
-            "openOnRemote.openFileBranch",
-            withErrorHandler(openFileOnRemoteBranch)
-        ),
-        vscode.commands.registerCommand(
-            "openOnRemote.copyLinkHead",
-            withErrorHandler(copyLinkToRemoteHead)
-        ),
-        vscode.commands.registerCommand(
-            "openOnRemote.copyLinkBranch",
-            withErrorHandler(copyLinkToRemoteBranch)
+            "openOnRemote.copyLink",
+            withErrorHandler(copyLinkToRemote)
         )
     );
 }

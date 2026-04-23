@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { getGitContext, getRemoteBranches } from "../git";
+import { getGitContext, pickRef } from "../git";
 import { resolveGitHubUrl } from "../remote";
 
 /**
@@ -36,48 +36,20 @@ async function copyUrlToClipboard(url: string): Promise<void> {
 }
 
 /**
- * Builds a GitHub URL pinned to the HEAD commit SHA and copies it to the
- * clipboard.
+ * Prompts the user to pick a ref (defaulting to HEAD commit SHA), then copies
+ * a GitHub URL for the file at that ref to the clipboard.
  */
-export async function copyLinkToRemoteHead(explorerUri?: vscode.Uri): Promise<void> {
-    const ctx = await getGitContext(explorerUri);
-    const selection = getSelectionLines(ctx.fileUri);
-    const url = resolveGitHubUrl(ctx.remote, {
-        ref: ctx.headCommitSha,
-        filePath: ctx.filePath,
-        ...selection,
-    });
-    await copyUrlToClipboard(url);
-}
-
-/**
- * Prompts the user to pick a remote branch, then copies a GitHub URL for the
- * file at that ref to the clipboard.
- */
-export async function copyLinkToRemoteBranch(explorerUri?: vscode.Uri): Promise<void> {
+export async function copyLinkToRemote(explorerUri?: vscode.Uri): Promise<void> {
     const ctx = await getGitContext(explorerUri);
 
-    const branches = await getRemoteBranches(ctx.repo);
-    if (branches.length === 0) {
-        throw new Error(
-            "No remote-tracking branches found. " +
-                "Run `git fetch` to update remote refs and try again."
-        );
-    }
-
-    const picked = await vscode.window.showQuickPick(branches, {
-        title: "Copy Link to Remote — Choose Branch",
-        placeHolder: "Select a branch…",
-    });
-
-    // User dismissed the picker.
+    const picked = await pickRef(ctx, "Copy Link to Remote");
     if (picked === undefined) {
         return;
     }
 
     const selection = getSelectionLines(ctx.fileUri);
     const url = resolveGitHubUrl(ctx.remote, {
-        ref: picked,
+        ref: picked.ref,
         filePath: ctx.filePath,
         ...selection,
     });

@@ -26,65 +26,37 @@
   "contributes": {
     "commands": [
       {
-        "command": "openOnRemote.openFileHead",
+        "command": "openOnRemote.openFile",
         "title": "Open File on Remote",
         "category": "Open on Remote"
       },
       {
-        "command": "openOnRemote.openFileBranch",
-        "title": "Open File on Remote (Choose Branch)",
-        "category": "Open on Remote"
-      },
-      {
-        "command": "openOnRemote.copyLinkHead",
+        "command": "openOnRemote.copyLink",
         "title": "Copy Link to Remote",
-        "category": "Open on Remote"
-      },
-      {
-        "command": "openOnRemote.copyLinkBranch",
-        "title": "Copy Link to Remote (Choose Branch)",
         "category": "Open on Remote"
       }
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "openOnRemote.openFileHead",
+          "command": "openOnRemote.openFile",
           "when": "editorIsOpen"
         },
         {
-          "command": "openOnRemote.openFileBranch",
-          "when": "editorIsOpen"
-        },
-        {
-          "command": "openOnRemote.copyLinkHead",
-          "when": "editorIsOpen"
-        },
-        {
-          "command": "openOnRemote.copyLinkBranch",
+          "command": "openOnRemote.copyLink",
           "when": "editorIsOpen"
         }
       ],
       "explorer/context": [
         {
-          "command": "openOnRemote.openFileHead",
+          "command": "openOnRemote.openFile",
           "when": "!explorerResourceIsFolder",
           "group": "navigation@100"
         },
         {
-          "command": "openOnRemote.openFileBranch",
+          "command": "openOnRemote.copyLink",
           "when": "!explorerResourceIsFolder",
           "group": "navigation@101"
-        },
-        {
-          "command": "openOnRemote.copyLinkHead",
-          "when": "!explorerResourceIsFolder",
-          "group": "navigation@102"
-        },
-        {
-          "command": "openOnRemote.copyLinkBranch",
-          "when": "!explorerResourceIsFolder",
-          "group": "navigation@103"
         }
       ]
     }
