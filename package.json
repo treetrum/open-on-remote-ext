@@ -96,7 +96,7 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "lint": "oxlint src/"
+    "lint": "oxlint"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
