@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.1](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.0...v1.0.1) (2026-04-23)
+
+
+### Fixes
+
+* bump engines.vscode to match @types/vscode 1.116.0 ([6ab6f1c](https://github.com/treetrum/open-on-remote-ext/commit/6ab6f1cc25841db29695e7e87d8669374d3cbd25))
+
+
+### Internal Changes
+
+* add LICENSE, pin vsce as dev dependency ([18904b2](https://github.com/treetrum/open-on-remote-ext/commit/18904b272632cdad217d5ec65e73c7cf3a52b29a))
+* add README ([50f1a4b](https://github.com/treetrum/open-on-remote-ext/commit/50f1a4bcf2e65e833af295e438b85f9e63492324))
+
 ## [1.0.0](https://github.com/treetrum/open-on-remote-ext/compare/v0.1.0...v1.0.0) (2026-04-23)
 
 
