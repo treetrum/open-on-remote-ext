@@ -23,3 +23,6 @@ jobs:
 
       - name: Build
         run: npm run compile
+
+      - name: Package (dry-run publish check)
+        run: npx @vscode/vsce package

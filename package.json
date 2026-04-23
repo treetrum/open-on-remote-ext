@@ -19,7 +19,7 @@
     "permalink"
   ],
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.116.0"
   },
   "activationEvents": [],
   "main": "./out/extension.js",
