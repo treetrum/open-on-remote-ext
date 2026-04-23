@@ -1,6 +1,6 @@
 {
   "name": "open-on-remote",
-  "displayName": "Open on Remote",
+  "displayName": "Open Remote",
   "description": "Open the current file or selection on GitHub. Lightweight replacement for the GitHub Pull Requests extension's 'open on remote' feature.",
   "version": "0.1.0",
   "publisher": "treetrum",
@@ -28,12 +28,12 @@
       {
         "command": "openOnRemote.openFile",
         "title": "Open File on Remote",
-        "category": "Open on Remote"
+        "category": "Open Remote"
       },
       {
         "command": "openOnRemote.copyLink",
         "title": "Copy Link to Remote",
-        "category": "Open on Remote"
+        "category": "Open Remote"
       }
     ],
     "menus": {
