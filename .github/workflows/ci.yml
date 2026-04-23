@@ -25,4 +25,4 @@ jobs:
         run: npm run compile
 
       - name: Package (dry-run publish check)
-        run: npx @vscode/vsce package
+        run: npx vsce package
