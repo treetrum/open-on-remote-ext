@@ -3,12 +3,18 @@ import { getGitContext, getRemoteBranches } from "../git";
 import { resolveGitHubUrl } from "../remote";
 
 /**
- * Builds the selection anchor from the active editor.
- * Returns 1-based line numbers, or undefined if there is no active editor.
+ * Builds the selection anchor from the active editor, but only if the active
+ * editor is showing the same file we are linking to. When triggered from the
+ * explorer context menu the target file may not be the active editor.
+ *
+ * Returns 1-based line numbers, or undefined when there is no matching editor
+ * or no active selection.
  */
-function getSelectionLines(): { startLine: number; endLine: number } | undefined {
+function getSelectionLines(
+    fileUri: vscode.Uri
+): { startLine: number; endLine: number } | undefined {
     const editor = vscode.window.activeTextEditor;
-    if (!editor) {
+    if (!editor || editor.document.uri.fsPath !== fileUri.fsPath) {
         return undefined;
     }
     const startLine = editor.selection.start.line + 1;
@@ -30,7 +36,7 @@ async function copyUrlToClipboard(url: string): Promise<void> {
  */
 export async function copyLinkToRemoteHead(explorerUri?: vscode.Uri): Promise<void> {
     const ctx = await getGitContext(explorerUri);
-    const selection = getSelectionLines();
+    const selection = getSelectionLines(ctx.fileUri);
     const url = resolveGitHubUrl(ctx.remote, {
         ref: ctx.headCommitSha,
         filePath: ctx.filePath,
@@ -64,7 +70,7 @@ export async function copyLinkToRemoteBranch(explorerUri?: vscode.Uri): Promise<
         return;
     }
 
-    const selection = getSelectionLines();
+    const selection = getSelectionLines(ctx.fileUri);
     const url = resolveGitHubUrl(ctx.remote, {
         ref: picked,
         filePath: ctx.filePath,

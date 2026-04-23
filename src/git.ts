@@ -13,6 +13,8 @@ export interface GitContext {
     remote: Remote;
     /** Repo-root-relative POSIX path of the active file, e.g. "src/index.ts". */
     filePath: string;
+    /** Resolved URI of the file being linked — used to match against the active editor. */
+    fileUri: vscode.Uri;
 }
 
 /**
@@ -145,7 +147,7 @@ export async function getGitContext(explorerUri?: vscode.Uri): Promise<GitContex
     const remote = resolveRemote(repo);
     const filePath = getRepoRelativePath(repo, fileUri);
 
-    return { repo, headCommitSha, remote, filePath };
+    return { repo, headCommitSha, remote, filePath, fileUri };
 }
 
 /**
