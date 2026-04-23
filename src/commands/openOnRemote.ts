@@ -40,7 +40,7 @@ export async function openFileOnRemote(explorerUri?: vscode.Uri): Promise<void> 
         return;
     }
 
-    const selection = getSelectionLines(ctx.fileUri);
+    const selection = picked.isHead ? getSelectionLines(ctx.fileUri) : undefined;
     const url = resolveGitHubUrl(ctx.remote, {
         ref: picked.ref,
         filePath: ctx.filePath,

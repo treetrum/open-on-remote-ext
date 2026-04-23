@@ -175,6 +175,12 @@ async function getRemoteBranches(repo: Repository): Promise<string[]> {
 export interface RefPickItem extends vscode.QuickPickItem {
     /** The git ref to use in the URL — either a commit SHA or a branch name. */
     ref: string;
+    /**
+     * True when this item represents the current HEAD commit SHA.
+     * Only HEAD permalinks should include line anchors — branch refs may point
+     * to different content so line numbers could be misleading.
+     */
+    isHead: boolean;
 }
 
 /**
@@ -195,10 +201,12 @@ export async function pickRef(
             label: "$(git-commit) Current commit (HEAD)",
             description: ctx.headCommitSha.slice(0, 7),
             ref: ctx.headCommitSha,
+            isHead: true,
         },
         ...branches.map((branch) => ({
             label: `$(git-branch) ${branch}`,
             ref: branch,
+            isHead: false,
         })),
     ];
 
