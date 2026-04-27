@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.2](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.1...v1.0.2) (2026-04-27)
+
+
+### Dependencies
+
+* pin dependency @vscode/vsce to 3.9.1 ([#17](https://github.com/treetrum/open-on-remote-ext/issues/17)) ([1b95547](https://github.com/treetrum/open-on-remote-ext/commit/1b95547746a795c5fec2d274c96398437a803767))
+* update dependency oxlint to v1.62.0 ([#19](https://github.com/treetrum/open-on-remote-ext/issues/19)) ([772a6a3](https://github.com/treetrum/open-on-remote-ext/commit/772a6a3494baa4d8b5b3aba59d3825da09a44f60))
+
 ## [1.0.1](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.0...v1.0.1) (2026-04-23)
 
 
