@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.2](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.1...v1.0.2) (2026-05-12)
+
+
+### Chores
+
+* **deps-dev:** bump fast-uri from 3.1.0 to 3.1.2 in the npm_and_yarn group across 1 directory ([#23](https://github.com/treetrum/open-on-remote-ext/issues/23)) ([733944c](https://github.com/treetrum/open-on-remote-ext/commit/733944cc959d9b291ef7a65b2ee5c21885f29889))
+* pin dependency @vscode/vsce to 3.9.1 ([#17](https://github.com/treetrum/open-on-remote-ext/issues/17)) ([1b95547](https://github.com/treetrum/open-on-remote-ext/commit/1b95547746a795c5fec2d274c96398437a803767))
+* recategorise release-please commit types ([fe95607](https://github.com/treetrum/open-on-remote-ext/commit/fe9560796b66512ad5332135d2c8cde83d3dfc9f))
+* update dependency @types/node to v24.12.3 ([#22](https://github.com/treetrum/open-on-remote-ext/issues/22)) ([0ceb2ee](https://github.com/treetrum/open-on-remote-ext/commit/0ceb2eea90f86870a87d11e039e22d5e217c1c97))
+* update dependency @types/node to v24.12.4 ([#25](https://github.com/treetrum/open-on-remote-ext/issues/25)) ([d40a847](https://github.com/treetrum/open-on-remote-ext/commit/d40a847966064ed57feec2f58917813ec8b8646f))
+* update dependency oxlint to v1.62.0 ([#19](https://github.com/treetrum/open-on-remote-ext/issues/19)) ([772a6a3](https://github.com/treetrum/open-on-remote-ext/commit/772a6a3494baa4d8b5b3aba59d3825da09a44f60))
+* update dependency oxlint to v1.63.0 ([#21](https://github.com/treetrum/open-on-remote-ext/issues/21)) ([dc45597](https://github.com/treetrum/open-on-remote-ext/commit/dc4559785545043059b1b5ede9167fb61675ad24))
+* update dependency oxlint to v1.64.0 ([#24](https://github.com/treetrum/open-on-remote-ext/issues/24)) ([19d35c4](https://github.com/treetrum/open-on-remote-ext/commit/19d35c413ee267b12e32519e43234a1acab85475))
+
 ## [1.0.1](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.0...v1.0.1) (2026-04-23)
 
 
