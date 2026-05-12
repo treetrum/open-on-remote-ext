@@ -14,8 +14,8 @@
       "changelog-sections": [
         { "type": "feat", "section": "Features" },
         { "type": "fix", "section": "Fixes" },
-        { "type": "deps", "section": "Dependencies" },
-        { "type": "chore", "section": "Internal Changes" }
+        { "type": "deps", "section": "Chores" },
+        { "type": "chore", "section": "Chores" }
       ]
     }
   }
