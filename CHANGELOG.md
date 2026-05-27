@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.3](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.2...v1.0.3) (2026-05-27)
+
+
+### Chores
+
+* **deps:** bump uuid from 8.3.2 to removed in the npm_and_yarn group across 1 directory ([#31](https://github.com/treetrum/open-on-remote-ext/issues/31)) ([a33e7b4](https://github.com/treetrum/open-on-remote-ext/commit/a33e7b43e8e03b2f896b9d758c54f80ddc95a967))
+* **deps:** update dependency oxlint to v1.65.0 ([#28](https://github.com/treetrum/open-on-remote-ext/issues/28)) ([d3b5feb](https://github.com/treetrum/open-on-remote-ext/commit/d3b5febc5b03408aeacd667d80bd054190acdb63))
+* **deps:** update dependency oxlint to v1.66.0 ([#30](https://github.com/treetrum/open-on-remote-ext/issues/30)) ([c42b77b](https://github.com/treetrum/open-on-remote-ext/commit/c42b77be2e9e06c8fce2b2d75f995a915d6a8d19))
+* **deps:** update dependency oxlint to v1.67.0 ([#33](https://github.com/treetrum/open-on-remote-ext/issues/33)) ([ff98947](https://github.com/treetrum/open-on-remote-ext/commit/ff989478d39f81ca2b7c48af7a8c922748ca0364))
+
 ## [1.0.2](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.1...v1.0.2) (2026-05-12)
 
 
