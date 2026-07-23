@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.0.3](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.2...v1.0.3) (2026-07-23)
+
+
+### Chores
+
+* **deps-dev:** bump qs from 6.15.1 to 6.15.2 in the npm_and_yarn group across 1 directory ([#32](https://github.com/treetrum/open-on-remote-ext/issues/32)) ([fb17037](https://github.com/treetrum/open-on-remote-ext/commit/fb17037beb17d9a36a5be09e15bf53b3d83c4d7c))
+* **deps:** bump uuid from 8.3.2 to removed in the npm_and_yarn group across 1 directory ([#31](https://github.com/treetrum/open-on-remote-ext/issues/31)) ([a33e7b4](https://github.com/treetrum/open-on-remote-ext/commit/a33e7b43e8e03b2f896b9d758c54f80ddc95a967))
+* **deps:** update actions/checkout action to v7 ([#42](https://github.com/treetrum/open-on-remote-ext/issues/42)) ([c56fcef](https://github.com/treetrum/open-on-remote-ext/commit/c56fcef620d235497cda444b2b11b4f58725c06c))
+* **deps:** update actions/setup-node action to v7 ([#48](https://github.com/treetrum/open-on-remote-ext/issues/48)) ([914fa75](https://github.com/treetrum/open-on-remote-ext/commit/914fa750e8a2a6b29f14e3745c340a7f3bb2be27))
+* **deps:** update dependency @types/node to v24.13.0 ([#36](https://github.com/treetrum/open-on-remote-ext/issues/36)) ([fe3d3e6](https://github.com/treetrum/open-on-remote-ext/commit/fe3d3e6cb4dff88a6b71a8e2b556a2a082ab87b8))
+* **deps:** update dependency @types/node to v24.13.1 ([#37](https://github.com/treetrum/open-on-remote-ext/issues/37)) ([b733e29](https://github.com/treetrum/open-on-remote-ext/commit/b733e2920744240b3401bc8629e2f3c81b6f3fe2))
+* **deps:** update dependency @types/node to v24.13.2 ([#39](https://github.com/treetrum/open-on-remote-ext/issues/39)) ([f1fcd7f](https://github.com/treetrum/open-on-remote-ext/commit/f1fcd7f795bf920bcc0a9390d08c4c6ff741439a))
+* **deps:** update dependency @types/node to v24.13.3 ([#46](https://github.com/treetrum/open-on-remote-ext/issues/46)) ([5d3d890](https://github.com/treetrum/open-on-remote-ext/commit/5d3d89089de75afe0e4b5a67c398772289c9cde7))
+* **deps:** update dependency @vscode/vsce to v3.9.2 ([#35](https://github.com/treetrum/open-on-remote-ext/issues/35)) ([78342dc](https://github.com/treetrum/open-on-remote-ext/commit/78342dc2597027a688c9cdfa0f2db0074cc82b65))
+* **deps:** update dependency oxlint to v1.65.0 ([#28](https://github.com/treetrum/open-on-remote-ext/issues/28)) ([d3b5feb](https://github.com/treetrum/open-on-remote-ext/commit/d3b5febc5b03408aeacd667d80bd054190acdb63))
+* **deps:** update dependency oxlint to v1.66.0 ([#30](https://github.com/treetrum/open-on-remote-ext/issues/30)) ([c42b77b](https://github.com/treetrum/open-on-remote-ext/commit/c42b77be2e9e06c8fce2b2d75f995a915d6a8d19))
+* **deps:** update dependency oxlint to v1.67.0 ([#33](https://github.com/treetrum/open-on-remote-ext/issues/33)) ([ff98947](https://github.com/treetrum/open-on-remote-ext/commit/ff989478d39f81ca2b7c48af7a8c922748ca0364))
+* **deps:** update dependency oxlint to v1.72.0 ([#44](https://github.com/treetrum/open-on-remote-ext/issues/44)) ([f44e940](https://github.com/treetrum/open-on-remote-ext/commit/f44e940dbb8bead3524d67caf84130811dce795e))
+* **deps:** update dependency oxlint to v1.73.0 ([#45](https://github.com/treetrum/open-on-remote-ext/issues/45)) ([3450e39](https://github.com/treetrum/open-on-remote-ext/commit/3450e3920bb6071e604fec7725a6a1f88dbcfec7))
+* **deps:** update dependency oxlint to v1.74.0 ([#49](https://github.com/treetrum/open-on-remote-ext/issues/49)) ([446e294](https://github.com/treetrum/open-on-remote-ext/commit/446e2941592edd0d57b6e1a6722a66ca144899e1))
+* **deps:** update dependency oxlint to v1.75.0 ([#51](https://github.com/treetrum/open-on-remote-ext/issues/51)) ([35d6fa6](https://github.com/treetrum/open-on-remote-ext/commit/35d6fa6bd21ca0b3723378dbc5bdb31b252df302))
+* **deps:** update dependency typescript to v7 ([#47](https://github.com/treetrum/open-on-remote-ext/issues/47)) ([8a611b0](https://github.com/treetrum/open-on-remote-ext/commit/8a611b0ae5dafcd982542acf68dcde2a84edcc55))
+* **deps:** update oxc monorepo ([#43](https://github.com/treetrum/open-on-remote-ext/issues/43)) ([91d3932](https://github.com/treetrum/open-on-remote-ext/commit/91d39327df04e17f48ebd37048a97bb4c0637a67))
+* **deps:** update oxc monorepo to v1.68.0 ([#34](https://github.com/treetrum/open-on-remote-ext/issues/34)) ([330596b](https://github.com/treetrum/open-on-remote-ext/commit/330596b660323d8042a702e6c365192bac361330))
+* **deps:** update oxc monorepo to v1.69.0 ([#38](https://github.com/treetrum/open-on-remote-ext/issues/38)) ([307c41b](https://github.com/treetrum/open-on-remote-ext/commit/307c41b66320dd8df52891ce376e5ad76177c325))
+* **deps:** update oxc monorepo to v1.70.0 ([#40](https://github.com/treetrum/open-on-remote-ext/issues/40)) ([d4e59cb](https://github.com/treetrum/open-on-remote-ext/commit/d4e59cb41eb3cbbcc7605ac9caf3eb05bd7e2bb7))
+
 ## [1.0.2](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.1...v1.0.2) (2026-05-12)
 
 
