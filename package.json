@@ -74,7 +74,7 @@
     "@types/node": "24.13.3",
     "@types/vscode": "1.116.0",
     "@vscode/vsce": "3.9.2",
-    "oxlint": "1.74.0",
+    "oxlint": "1.75.0",
     "typescript": "7.0.2"
   }
 }
