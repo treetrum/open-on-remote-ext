@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.4](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.3...v1.0.4) (2026-10-07)
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v24.13.6 ([#63](https://github.com/treetrum/open-on-remote-ext/issues/63)) ([80852e1](https://github.com/treetrum/open-on-remote-ext/commit/80852e164d39b7563b53c00dfd37b4e86c58cf70))
+* **deps:** update dependency @types/node to v24.19.0 ([#66](https://github.com/treetrum/open-on-remote-ext/issues/66)) ([63d84b7](https://github.com/treetrum/open-on-remote-ext/commit/63d84b718b4ac4c2afb5d546b354b3cc333c97e9))
+* **deps:** update dependency @types/node to v24.19.1 ([#68](https://github.com/treetrum/open-on-remote-ext/issues/68)) ([a6a35e2](https://github.com/treetrum/open-on-remote-ext/commit/a6a35e20faa4803a559795fa32772f242d373071))
+* **deps:** update dependency oxlint to v1.85.0 ([#65](https://github.com/treetrum/open-on-remote-ext/issues/65)) ([bbe4616](https://github.com/treetrum/open-on-remote-ext/commit/bbe4616b64b8eaa872787aba9549b995939e1cf1))
+* **deps:** update dependency oxlint to v1.86.0 ([#67](https://github.com/treetrum/open-on-remote-ext/issues/67)) ([4ce4396](https://github.com/treetrum/open-on-remote-ext/commit/4ce43964414c4fea29daf6577a68367731c71e13))
+* **deps:** update dependency oxlint to v1.87.0 ([#69](https://github.com/treetrum/open-on-remote-ext/issues/69)) ([e4ef046](https://github.com/treetrum/open-on-remote-ext/commit/e4ef0465a7df7c29c8d1dfb33ad8495efd67bef1))
+
 ## [1.0.3](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.2...v1.0.3) (2026-09-18)
 
 
