@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.0.4](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.3...v1.0.4) (2026-10-21)
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v24.13.6 ([#63](https://github.com/treetrum/open-on-remote-ext/issues/63)) ([80852e1](https://github.com/treetrum/open-on-remote-ext/commit/80852e164d39b7563b53c00dfd37b4e86c58cf70))
+* **deps:** update dependency @types/node to v24.19.0 ([#66](https://github.com/treetrum/open-on-remote-ext/issues/66)) ([63d84b7](https://github.com/treetrum/open-on-remote-ext/commit/63d84b718b4ac4c2afb5d546b354b3cc333c97e9))
+* **deps:** update dependency @types/node to v24.19.1 ([#68](https://github.com/treetrum/open-on-remote-ext/issues/68)) ([a6a35e2](https://github.com/treetrum/open-on-remote-ext/commit/a6a35e20faa4803a559795fa32772f242d373071))
+* **deps:** update dependency @types/node to v24.19.2 ([#70](https://github.com/treetrum/open-on-remote-ext/issues/70)) ([82f89ce](https://github.com/treetrum/open-on-remote-ext/commit/82f89ce4d4d5f64e69ec27405b561650198158a3))
+* **deps:** update dependency oxlint to v1.85.0 ([#65](https://github.com/treetrum/open-on-remote-ext/issues/65)) ([bbe4616](https://github.com/treetrum/open-on-remote-ext/commit/bbe4616b64b8eaa872787aba9549b995939e1cf1))
+* **deps:** update dependency oxlint to v1.86.0 ([#67](https://github.com/treetrum/open-on-remote-ext/issues/67)) ([4ce4396](https://github.com/treetrum/open-on-remote-ext/commit/4ce43964414c4fea29daf6577a68367731c71e13))
+* **deps:** update dependency oxlint to v1.87.0 ([#69](https://github.com/treetrum/open-on-remote-ext/issues/69)) ([e4ef046](https://github.com/treetrum/open-on-remote-ext/commit/e4ef0465a7df7c29c8d1dfb33ad8495efd67bef1))
+* **deps:** update dependency oxlint to v1.88.0 ([#71](https://github.com/treetrum/open-on-remote-ext/issues/71)) ([5d64a1d](https://github.com/treetrum/open-on-remote-ext/commit/5d64a1dc33308d9b8a21545c9fb5901fb21b4d95))
+* **deps:** update dependency oxlint to v1.89.0 ([#72](https://github.com/treetrum/open-on-remote-ext/issues/72)) ([4079c92](https://github.com/treetrum/open-on-remote-ext/commit/4079c928f5625705cacc45ee5e9aba05db29d435))
+
 ## [1.0.3](https://github.com/treetrum/open-on-remote-ext/compare/v1.0.2...v1.0.3) (2026-09-18)
 
 
