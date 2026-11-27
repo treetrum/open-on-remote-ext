@@ -71,7 +71,7 @@
     "lint": "oxlint"
   },
   "devDependencies": {
-    "@types/node": "26.6.10",
+    "@types/node": "26.6.11",
     "@types/vscode": "1.116.0",
     "@vscode/vsce": "4.1.1",
     "oxlint": "1.95.0",
